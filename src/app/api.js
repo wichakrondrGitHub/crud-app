@@ -3,13 +3,13 @@ import axios from "axios";
 const apiURL = process.env.REACT_APP_REQRES_API;
 
 function getUsers() {
-  const response = axios.get(`${apiURL}/users`);
+  const response = axios.get(`${apiURL}/user`);
 
   return response;
 }
 
 function getCreatedUser({ first_name, last_name, email }) {
-  const response = axios.post(`${apiURL}/users`, {
+  const response = axios.post(`${apiURL}/user`, {
     email,
     first_name,
     last_name
@@ -19,7 +19,7 @@ function getCreatedUser({ first_name, last_name, email }) {
 }
 
 function getUpdatedUser(id, user) {
-  const response = axios.put(`${apiURL}/users/${id}`, {
+  const response = axios.put(`${apiURL}/user/${id}`, {
     avatar: user.avatar,
     id: id,
     email: user.email,
@@ -31,7 +31,7 @@ function getUpdatedUser(id, user) {
 }
 
 function getDeletedUser(id) {
-  const response = axios.delete(`${apiURL}/users/${id}`);
+  const response = axios.delete(`${apiURL}/user/${id}`);
 
   return response;
 }

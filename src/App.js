@@ -225,8 +225,8 @@ function App() {
 
     try {
       await getUsers().then(({ data }) => {
-        setSavedUsers(data.data);
-        dispatch({ type: "SET_USERS", data: data.data });
+        setSavedUsers(data);
+        dispatch({ type: "SET_USERS", data: data });
       });
     } catch (err) {
       MySwal.fire({
